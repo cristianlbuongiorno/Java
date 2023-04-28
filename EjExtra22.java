@@ -11,16 +11,23 @@ import java.util.Scanner;
  * @author crist
  */
 public class EjExtra22 {
+
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        
-        int min, hr, dia;
-        
-        System.out.println("Ingrese el tiempo trancurrido en minutos: ");
-        min = leer.nextInt();
-        
-        hr = min / 1440;
-        dia = min 
-        
+
+        System.out.println("Inrese el tiempo transcurrido en mintos: ");
+        int min = leer.nextInt(), hs, dias;
+
+        hs = (int) min / 60;
+        if (hs < 24) {
+            dias = 0;
+        } else {
+            dias = (int) hs / 24;
+            if (!(hs % 24 == 0)) {
+                hs = hs % 24;
+            }
         }
+        System.out.println(dias + " día/s, " + hs + " hora/s.");
+
+    }
 }
