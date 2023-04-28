@@ -16,27 +16,27 @@ public class EjExtra16 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
 
-        int[] vector = new int[10];
-        for (int i = 0; i < 10; i++) {
-            vector[i] = (int) (Math.random() * 10);
+        System.out.println("ingrese el tamaño de su vector");
+        int tam = leer.nextInt(), n, cont = 0;
+        int[] vector = new int[tam];
+        for (int i = 0; i < tam; i++) {
+            vector[i] = (int) (Math.random() * 100);
         }
-        System.out.println("Qué número desea buscar del 0 al 10?");
-        int num = leer.nextInt();
-
-        boolean encontrado = true;
-        boolean repetido = true;
-
-        for (int i = 0; i < 10; i++) {
-            if (vector[i] == num) {
-                System.out.println("El número " + num + " se encuentra en la posición " + vector[i] + " del vector.");
-                encontrado = false;
-            } else if (vector[i] == num + 1) {
-                System.out.println("El número " + num + " se encuentra repetido en el vector.");
-                repetido = false;
-            } else {
-                System.out.println("El número " + num + " no se encuentra en el vector.");
-                break;
+        System.out.println("Ingrese un numero a buscar en el vector");
+        n = leer.nextInt();
+        for (int i = 0; i < tam; i++) {
+            if (n == vector[i]) {
+                System.out.println("el numero se encuentra en el subindice " + i + " del vector");
+                cont++;
             }
+
+        }
+        if (cont > 1) {
+            System.out.println("el numero que busco esta repetido " + cont + " veces");
+        }
+        if (cont == 0) {
+            System.out.println("El numero que busca no se encuentra en el vector");
         }
     }
+
 }
